@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Flight Tracker</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- OpenLayers CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/ol@v7.1.0/ol.css"
+    />
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f0f4f8;
+        color: #334155;
+      }
+      #map {
+        width: 100%;
+        height: 600px;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5rem;
+      }
+      .flight-card {
+        background-color: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #e2e8f0;
+      }
+      .flight-card h3 {
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+      }
+      .flight-card p {
+        font-size: 0.95rem;
+        color: #475569;
+      }
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 1rem;
+      }
+      .message-box {
+        background-color: #fefcbf;
+        border: 1px solid #fbd38d;
+        color: #9c5c16;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="p-6">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-8">
+        Live Flight Tracker
+      </h1>
+
+      <div id="messageBox" class="message-box" role="alert"></div>
+
+      <div id="map"></div>
+
+      <h2 class="section-title mt-8 mb-6 text-center">Flight Details</h2>
+      <div
+        id="flightDetails"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <p class="text-center text-gray-500 col-span-full">Loading flights...</p>
+      </div>
+    </div>
+
+    <!-- OpenLayers JS -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.1.0/dist/ol.js"></script>
+
+    <!-- Main JavaScript (Vite entry point) -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
