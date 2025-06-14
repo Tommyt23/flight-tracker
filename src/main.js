@@ -33,7 +33,7 @@ async function fetchFlights() {
   try {
     messageBox.style.display = 'none';
 
-    const res = await fetch(`http://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_status=active&limit=100`);
+    const res = await fetch(`https://api.aviationstack.com/v1/flights?access_key=${API_KEY}&flight_status=active&limit=100`);
     const data = await res.json();
 
     if (!data || !data.data) throw new Error('Invalid API response');
